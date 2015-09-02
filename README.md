@@ -17,19 +17,19 @@ pod "UJetSDK", "~> 1.0"
 ## Setup
 1. Add `#import "UJetSDK.h"` to `AppDelegate.m`
 
-2. Add `[UJetSDK setup:applicationKey withLaunchOptions:launchOptions]` to `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
+2. Add `[UJetSDK setup:appId withClientKey:clientKey withLaunchOptions:launchOptions]` to `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
 ````objective-c
-[UJetSDK setup:applicationKey withLaunchOptions:launchOptions];
+[UJetSDK setup:appId withClientKey:clientKey withLaunchOptions:launchOptions];
 ````
 
-3. Add `[UJetSDK setup:applicationKey withLaunchOptions:launchOptions]` to `- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo`
+3. Add `[UJetSDK notification:userInfo]` to `- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo`
 ````objective-c
 [UJetSDK notification:userInfo];
 ````
 
 4. Add `#import "UJetSDK.h"` and execute `[UjetSDK show:deviceToken]` when you want to show UJET UI.
 ````objective-c
-[UJetSDK showPopup: userId             // required  
+[UJetSDK showPopup: userIdentifier     // required  
          withName: name                // required 
          withPhone: phone              // optional 
          withAddress: address          // optional
