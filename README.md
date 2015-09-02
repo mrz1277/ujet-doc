@@ -1,9 +1,9 @@
 #Initial setup on the web (for both of iOS and Android)
 When a user schedules a call, UJET will send a notification to the mobile phone at the scheduled time. To enable the notification, you should open an API for notification and register your hosting app information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update the following information:
 * API URL
-* app_id, secret_key
-* access_token(oauth) or username
-* password(basic, digest)
+* Oauth - app_id, secret_key, access_token(oauth)
+or
+* Basic Auth, Digest Auth - username, password
 
 #Setup for iOS
 ## Installation with CocoaPods
