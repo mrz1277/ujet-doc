@@ -1,8 +1,8 @@
 #Initial setup on the web (for both of iOS and Android)
 When a user schedules a call, UJET will send a notification to the mobile phone at the scheduled time. To enable the notification, you should open an API for notification and register your hosting app information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update the following information:
 * API URL
-* app_id, secret_key, access_token for oAuth
-* or username, password for Basic Auth/Digest Auth 
+* Oauth - app_id, secret_key, access_token
+* Basic Auth, Digest Auth - username, password
 
 #Setup for iOS
 ## Installation with CocoaPods
@@ -18,11 +18,13 @@ pod "UJetSDK", "~> 1.0"
 1. Add `#import "UJetSDK.h"` to `AppDelegate.m`
 
 2. Add `[UJetSDK setup:applicationKey withLaunchOptions:launchOptions]` to `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
+
 ````objective-c
 [UJetSDK setup:applicationKey withLaunchOptions:launchOptions];
 ````
 
 3. Add `[UJetSDK setup:applicationKey withLaunchOptions:launchOptions]` to `- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo`
+
 ````objective-c
 [UJetSDK notification:userInfo];
 ````
@@ -56,7 +58,7 @@ Import .jar file under your library directory.
 ### Setup
 
 1. Add permissions under `<manifest> in `AndroidManifest.xml`
-```
+```xml
 <manifest>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -68,7 +70,7 @@ Import .jar file under your library directory.
 ```
 
 2. Add services under `<application>` in `AndroidManifest.xml`
-```
+```xml
 <application>
     <service android:name="co.ujet.android.UjetClientService"
         android:exported="false"
@@ -77,7 +79,7 @@ Import .jar file under your library directory.
 ```
 
 3. Call initialize method on activity
-```
+```java
 Ujet.initialize(this, "APPLICATION ID", "CLIENT KEY");
 Ujet.showDialog("APP NAME");
 ```
