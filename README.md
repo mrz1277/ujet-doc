@@ -1,5 +1,5 @@
 #Setup on web
-When a user schedule call, UJET will send notification to mobile when scheduled time. To send notification, you should open API for notification and register information their information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update this information
+When a user schedules call, UJET will send a notification to the mobile phone at the scheduled time. To send notification, you should open API for notification and register information their information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update this information
 * API URL
 * app_id, secret_key, access_token(oauth) or username, password(basic, digest)
 
