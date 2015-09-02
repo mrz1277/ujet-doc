@@ -36,3 +36,48 @@ pod "UJetSDK", "~> 1.0"
          withDeviceToken: deviceToken  // optional
 ];
 ````
+
+# Setup for Android
+
+## Installation via Gradle
+
+### build.gradle
+
+```
+dependencies {
+    compile 'co.ujet.android:ujet:1.0.0'
+}
+```
+
+## Installation via jar
+
+Import .jar file under your library directory.
+
+### Setup
+
+1. Add permissions under `<manifest> in `AndroidManifest.xml`
+```
+<manifest>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+</manifest>
+```
+
+2. Add services under `<application>` in `AndroidManifest.xml`
+```
+<application>
+    <service android:name="co.ujet.android.UjetClientService"
+        android:exported="false"
+        android:stopWithTask="false" />
+</application>
+```
+
+3. Call initialize method on activity
+```
+Ujet.initialize(this, "APPLICATION ID", "CLIENT KEY");
+Ujet.showDialog("APP NAME");
+```
