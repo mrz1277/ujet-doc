@@ -29,10 +29,10 @@ pod "UJetSDK", "~> 1.0"
 
 4. Add `#import "UJetSDK.h"` and execute `[UjetSDK show:deviceToken]` when you want to show UJET UI.
 ````objective-c
-[UJetSDK showPopup:userId             // required  
-         withName:name                // required 
-         withPhone:phone              // optional 
-         withAddress:address          // optional
-         withDeviceToken:deviceToken  // optional
+[UJetSDK showPopup: userId             // required  
+         withName: name                // required 
+         withPhone: phone              // optional 
+         withAddress: address          // optional
+         withDeviceToken: deviceToken  // optional
 ];
 ````
