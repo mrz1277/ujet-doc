@@ -1,7 +1,9 @@
-#Setup on web
-When a user schedules call, UJET will send a notification to the mobile phone at the scheduled time. To send notification, you should open API for notification and register information their information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update this information
+#Initial setup on the web (for both of iOS and Android)
+When a user schedules call, UJET will send a notification to the mobile phone at the scheduled time. To enable the notification, you should open an API for notification and register your hosting app information. Please visit [setup page](http://staging.ujet.co/#/manager/company) and update the following information:
 * API URL
-* app_id, secret_key, access_token(oauth) or username, password(basic, digest)
+* app_id, secret_key
+* access_token(oauth) or username
+* password(basic, digest)
 
 #Setup for iOS
 ## Installation with CocoaPods
@@ -26,7 +28,7 @@ pod "UJetSDK", "~> 1.0"
 [UJetSDK notification:userInfo];
 ````
 
-4. Add `#import "UJetSDK.h"` and execute `[UjetSDK show:deviceToken]` when you want to show UJET popup.
+4. Add `#import "UJetSDK.h"` and execute `[UjetSDK show:deviceToken]` when you want to show UJET UI.
 ````objective-c
 [UJetSDK showPopup:email withDeviceToken:deviceToken];
 ````
